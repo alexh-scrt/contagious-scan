@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "contagious_scan"
+version = "0.1.0"
+description = "Security CLI tool to audit Git repositories for DPRK-style Contagious Interview supply chain attack indicators."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "contagious_scan contributors" }
+]
+keywords = ["security", "supply-chain", "git", "audit", "DPRK", "malware"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+    "gitpython>=3.1",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-tmp-path",
+]
+
+[project.scripts]
+contagious-scan = "contagious_scan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/example/contagious_scan"
+Issues = "https://github.com/example/contagious_scan/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["contagious_scan*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.setuptools.package-data]
+contagious_scan = ["py.typed"]
